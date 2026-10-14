@@ -1,11 +1,16 @@
 /* 1. 3D DOOR ENTRY ANIMATION */
 function openDoor() {
     const doorOverlay = id('door-overlay');
+    if (!doorOverlay) return;
+    
     doorOverlay.classList.add('door-open');
     
     // Start Petals Canvas
-    id('petals-canvas').style.opacity = '1';
-    startPetals();
+    const petalsCanvas = id('petals-canvas');
+    if (petalsCanvas) {
+        petalsCanvas.style.opacity = '1';
+        startPetals();
+    }
 
     setTimeout(() => {
         doorOverlay.style.visibility = 'hidden';
@@ -39,16 +44,24 @@ setInterval(() => {
     const diff = weddingDate - now;
 
     if (diff > 0) {
-        id('days').innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
-        id('hours').innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        id('mins').innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        id('secs').innerText = Math.floor((diff % (1000 * 60)) / 1000);
+        const daysEl = id('days');
+        const hoursEl = id('hours');
+        const minsEl = id('mins');
+        const secsEl = id('secs');
+
+        if (daysEl) daysEl.innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
+        if (hoursEl) hoursEl.innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        if (minsEl) minsEl.innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        if (secsEl) secsEl.innerText = Math.floor((diff % (1000 * 60)) / 1000);
     }
 }, 1000);
 
 /* 4. FALLING ROSE PETALS CANVAS ANIMATION */
+let animationFrameId = null; // Track frame to prevent multiple loops
+
 function startPetals() {
     const canvas = id('petals-canvas');
+    if (!canvas) return;
     const ctx = canvas.getContext('2d');
 
     canvas.width = window.innerWidth;
@@ -99,13 +112,18 @@ function startPetals() {
             drawPetal(p);
         });
 
-        requestAnimationFrame(animate);
+        animationFrameId = requestAnimationFrame(animate);
     }
 
+    // Cancel any existing loop if startPetals is called twice
+    if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+    }
     animate();
 
+    // Handle window resize cleanly (remove duplicate listeners by defining outside or handling sizing dynamically)
     window.addEventListener('resize', () => {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
-    });
+    }, { passive: true });
 }
