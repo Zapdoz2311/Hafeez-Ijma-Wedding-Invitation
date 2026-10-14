@@ -256,7 +256,7 @@
     text-align:center; min-width:0;
   }
   .invitation-copy > *{ margin:0; }
-  .invitation-hosts{ color:var(--wax-red-dark); font-family:var(--serif-head); font-size:clamp(0.82rem,1.5vw,1.02rem); font-weight:600; line-height:1.15; margin:0 0 0.14rem; }
+  .invitation-hosts{ color:var(--wax-red-dark); font-family:var(--serif-head); font-size:clamp(0.9rem,1.65vw,1.1rem); font-weight:600; line-height:1.3; margin:0 0 0.14rem; padding:.2rem 0; }
   .invitation-hosts::before{
     content:''; display:block; width:clamp(46px,7.8vw,68px); height:2px; margin:0 auto .28rem;
     background:linear-gradient(90deg,transparent,var(--invite-gold),var(--gold-bright),var(--invite-gold),transparent);
@@ -292,11 +292,12 @@
     box-shadow:none;
     backdrop-filter:none; -webkit-backdrop-filter:none;
   }
-  .invitation-groom,.invitation-bride{ margin:0; color:var(--wax-red-dark); font-family:var(--serif-head); font-size:clamp(1.64rem,2.8vw,2.28rem); line-height:1.04; text-align:center; width:100%; font-weight:700; letter-spacing:0.02em; text-shadow:0 1px 0 rgba(255,255,255,0.18),0 8px 16px rgba(112,26,51,0.10); position:relative; z-index:1; white-space:normal; word-break:break-word; max-width:100%; }
+  .invitation-groom,.invitation-bride{ margin:0; color:var(--wax-red-dark); font-family:var(--serif-head); font-size:clamp(1.84rem,3vw,2.48rem); line-height:1.04; text-align:center; width:100%; font-weight:700; letter-spacing:0.02em; text-shadow:0 1px 0 rgba(255,255,255,0.18),0 8px 16px rgba(112,26,51,0.10); position:relative; z-index:1; white-space:normal; word-break:break-word; max-width:100%; }
   .invitation-groom{ display:block; width:100%; margin-top:-0.42rem; }
   .invitation-parent{
     display:block; width:100%; margin:.08rem 0 0; color:var(--wax-red-dark); font-family:var(--serif-body); font-size:clamp(0.92rem,1.45vw,1.72rem); font-weight:600; line-height:1.2; text-align:center; white-space:normal; word-break:break-word;
   }
+  .bride-parent{ font-size:clamp(1rem,1.55vw,1.8rem); }
   .invitation-parent strong{ color:var(--invite-gold-dark); margin-right:.22em; }
   .invitation-with{
     display:block; margin:.12rem 0 .08rem; color:var(--wax-red-dark); font-family:var(--serif-head); font-size:clamp(0.72rem,1.1vw,0.88rem); font-style:italic; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; position:relative; z-index:1;
@@ -441,6 +442,7 @@
   }
   .countdown-content .calendar-btn{ margin-left:.65rem; }
   .calendar-btn:hover{ transform:translateY(-3px); box-shadow:0 15px 32px rgba(0,0,0,0.45), 0 0 25px rgba(112,26,51,0.4); }
+  .calendar-seal{ display:block; width:clamp(76px,10vw,112px); height:auto; margin:.9rem auto 0; mix-blend-mode:multiply; }
 
   /* ---------- Page 5 : footer ---------- */
   .footer-page{ min-height:60vh; padding-bottom:4rem; }
@@ -561,7 +563,7 @@
         <div class="invitation-name-wrap groom-wrap">
           <h2 class="invitation-groom">Mohammed Hafeez</h2>
         </div>
-        <span class="invitation-with">Weds</span>
+        <span class="invitation-with">- Weds - </span>
         <div class="invitation-name-wrap bride-wrap">
           <h2 class="invitation-bride">Ijma</h2>
           <p class="invitation-parent bride-parent"><br><strong>D/o</strong> Mrs. Farzana &amp; Mr. Inayat Hussain Gaibi</p>
@@ -669,12 +671,13 @@
       <div class="countdown-unit"><span id="cd-secs">00</span><label>Seconds</label></div>
     </div>
     <div class="reveal">
-      <button class="calendar-btn" id="add-calendar-btn" type="button">Add to Calendar</button>
+      <button class="calendar-btn" id="add-calendar-btn" type="button">Add to Calendar<br></button>
+      <img class="calendar-seal" src="img/Coversymbol.png" alt="H and I wax seal">
     </div>
 
     <div class="footer-glow" aria-hidden="true"></div>
-    <p class="footer-closing reveal"><br><br><br>From the days of our childhood to this major milestone, watching our brother step into his forever is special, and your presence would mean the world to us. -<span class="footer-closing-name">Reefa</span> &amp; <span class="footer-closing-name">Asiya</span></p>
-    <p class="footer-blessing reveal" id="footer-blessing">With warmest compliments and heartfelt duas from<br><strong>Dasurkar Family &amp; Friends</strong></p>
+    <p class="footer-closing reveal">From the days of our childhood to this major milestone, watching our brother step into his forever is special, and your presence would mean the world to us. -<span class="footer-closing-name">Reefa</span> &amp; <span class="footer-closing-name">Asiya</span></p>
+    <p class="footer-blessing reveal" id="footer-blessing">With warmest compliments and heartfelt duas from <strong> - Dasurkar Family &amp; Friends - </strong></p>
     <div class="footer-contacts" aria-label="Contact by phone">
       <a href="tel:+917900197669"><span class="contact-number">7900197669</span></a>
       <a href="tel:+919594499208"><span class="contact-number">9594499208</span></a>
