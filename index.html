@@ -676,8 +676,8 @@
     </div>
 
     <div class="footer-glow" aria-hidden="true"></div>
-    <p class="footer-closing reveal">From the days of our childhood to this major milestone, watching our brother step into his forever is special, and your presence would mean the world to us. -<span class="footer-closing-name">Reefa</span> &amp; <span class="footer-closing-name">Asiya</span></p>
-    <p class="footer-blessing reveal" id="footer-blessing">With warmest compliments and heartfelt duas from <strong> - Dasurkar Family &amp; Friends - </strong></p>
+    <p class="footer-closing reveal">From the days of our childhood to this major milestone, watching our brother step into his forever is special, and your presence would mean the world to us. -<span class="footer-closing-name"><br>Reefa</span> &amp; <span class="footer-closing-name">Asiya</span></p>
+    <p class="footer-blessing reveal" id="footer-blessing">With warmest compliments and heartfelt duas from <strong><br> - Dasurkar Family &amp; Friends - </strong></p>
     <div class="footer-contacts" aria-label="Contact by phone">
       <a href="tel:+917900197669"><span class="contact-number">7900197669</span></a>
       <a href="tel:+919594499208"><span class="contact-number">9594499208</span></a>
@@ -721,7 +721,7 @@
     return {
       x: Math.random() * window.innerWidth,
       y: randomY ? Math.random() * window.innerHeight : -10 - Math.random() * 40,
-      size: 1.6 + Math.random() * 1.2,
+      size: 1.3 + Math.random(),
       speedY: 0.45 + Math.random() * 0.4,
       swayAmp: 12 + Math.random() * 20,
       swaySpeed: 0.004 + Math.random() * 0.006,
@@ -734,7 +734,7 @@
 
   function initPetals(){
     resizePetalCanvas();
-    var count = window.innerWidth < 700 ? 84 : 132;
+    var count = window.innerWidth < 700 ? 12 : 18;
     petals = [];
     for(var i=0;i<count;i++){ petals.push(makePetal(true)); }
   }
